@@ -32,6 +32,7 @@ function displayMessages() {
     <li>
     <input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
     <label for='item_${i}' class="${item.important ? 'important' : ''}">${item.todo}</label>
+    <i class="delete" onclick="deleteTask(${i})"><i class="fa-solid fa-trash-can"></i>
     </li>
     `; 
     todo.innerHTML = displayMessage;
@@ -61,4 +62,8 @@ todo.addEventListener('contextmenu', function(event) {
     });
 });
 
-//todoList.splice(i, 1);
+function deleteTask(deleteId) {
+    todoList.splice(deleteId, 1);
+    localStorage.setItem("todo", JSON.stringify(todoList));
+    displayMessages();
+}

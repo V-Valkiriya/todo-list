@@ -107,3 +107,8 @@ input[type=checkbox]:checked + label:before {
     border-radius: 0;
     margin: 0 15px 5px 5px;
 }
+
+.delete {
+    padding-left: 8px;
+    cursor: pointer;
+}
